@@ -20,6 +20,8 @@ let package = Package(
         .package(name: "ZendeskMessagingSDK",
                  url: "https://github.com/zendesk/messaging_sdk_ios",
                  .exact("3.8.3"))
+        // Override the dependency with our fork until an important patch is merged upstream.
+        .fork(package: "ZendeskSupportSDK", url: "https://github.com/mal3k/support_sdk_ios/", .branch("master")),
     ],
     targets: [
         .binaryTarget(
